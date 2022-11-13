@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    tools:context=".ui.discoverlists.DiscoverListsFragment">
+
+    <TextView
+        android:id="@+id/discover_lists_title_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="6dp"
+        android:fontFamily="@font/raleway_regular"
+        android:includeFontPadding="false"
+        android:text="@string/discover_list_title"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/discover_lists_categories_button"
+        style="@style/CineMates.OnlyIconWithNoBorderButton"
+        android:layout_marginEnd="12dp"
+        android:visibility="gone"
+        app:icon="@drawable/ic_baseline_category_24"
+        app:iconTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/discover_lists_title_textview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/discover_lists_title_textview"
+        app:rippleColor="@color/white" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/discover_lists_recycler_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/discover_lists_title_textview" />
+
+    <ImageView
+        android:id="@+id/discover_lists_gradient_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@drawable/top_to_bottom_horizontal_gradient"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/discover_lists_recycler_view" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/discover_lists_no_elements_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/discover_lists_recycler_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/discover_lists_no_elements_text_view_1"
+            style="@style/no_elements_in_view_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="88dp"
+            android:layout_marginEnd="88dp"
+            android:text="@string/discover_lists_no_elements_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/discover_lists_search_users_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/raleway_semibold"
+            android:insetTop="0dp"
+            android:letterSpacing="0"
+            android:text="@string/search_users"
+            android:textAllCaps="false"
+            android:textColor="@color/yellow_button"
+            android:textSize="16sp"
+            app:icon="@drawable/ic_baseline_person_search_24"
+            app:iconGravity="top"
+            app:iconPadding="0dp"
+            app:iconSize="40dp"
+            app:iconTint="@color/yellow_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/discover_lists_no_elements_text_view_1"
+            app:rippleColor="@color/yellow_button" />
+
+        <TextView
+            android:id="@+id/discover_lists_no_elements_text_view_2"
+            style="@style/no_elements_in_view_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/discover_lists_no_elements_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/discover_lists_search_users_button" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

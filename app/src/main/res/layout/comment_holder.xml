@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/comment_holder_relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:backgroundTint="@color/black">
+
+    <TextView
+        android:id="@+id/comment_time_textview"
+        style="@style/CineMates.TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/comment_constraintlayout"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/frameLayout"
+        android:fontFamily="@font/lato_regular"
+        android:textColor="@color/gray_placeholder_text"
+        android:text=""
+        android:textAlignment="textEnd"
+        android:textSize="14sp" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="11dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageView
+            android:id="@+id/comment_profile_pic_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/notification_image_profile_shape"
+            android:src="@drawable/no_profilepic_placeholder" />
+
+        <ImageView
+            android:id="@+id/white_circle5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/notification_image_profile_shape" />
+
+
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/comment_constraintlayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/frameLayout"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_toEndOf="@+id/frameLayout"
+        android:background="@drawable/comment_holder_background">
+
+        <TextView
+            android:id="@+id/comment_text_textview"
+            style="@style/CineMates.TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/raleway_regular"
+            android:text=""
+            android:textAlignment="viewStart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/username_comment_author_textview" />
+
+        <TextView
+            android:id="@+id/username_comment_author_textview"
+            style="@style/CineMates.TextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/comment_text_textview"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="30dp"
+            android:fontFamily="@font/raleway_bold"
+            android:text=""
+            android:textAlignment="viewStart"
+            app:layout_constraintEnd_toEndOf="@+id/comment_text_textview"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/report_comment_icon"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/username_comment_author_textview"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_baseline_report_problem_24" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.user.customMovielists.logged.manipulation.CreateMovieListFragment">
+
+    <TextView
+        android:id="@+id/create_new_list_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginEnd="72dp"
+        android:fontFamily="@font/raleway_bold"
+        android:text="@string/give_name_to_new_list"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.38" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/create_new_list_edit_text"
+        android:background="@drawable/create_movie_list_edit_text_background"
+        android:textColor="@color/white"
+        android:inputType="textEmailAddress"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/create_new_list_title"
+        app:layout_constraintStart_toStartOf="@+id/create_new_list_title"
+        app:layout_constraintTop_toBottomOf="@+id/create_new_list_title" />
+
+    <Button
+        android:id="@+id/create_new_list_cancel"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/dialog_button_cancel"
+        android:textColor="@color/gray_placeholder_text"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/create_new_list_edit_text"
+        app:layout_constraintTop_toBottomOf="@+id/create_new_list_edit_text"
+        app:rippleColor="@color/gray_placeholder_text" />
+
+    <Button
+        android:id="@+id/create_new_list_confirm"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="4dp"
+        android:text="@string/confirm_button"
+        android:textColor="@color/yellow_button"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/create_new_list_edit_text"
+        app:layout_constraintTop_toBottomOf="@+id/create_new_list_edit_text"
+        app:rippleColor="@color/yellow_button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

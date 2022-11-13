@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.notification.ReportFragment">
+
+    <ScrollView
+        android:id="@+id/report_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/report_title_text_view">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.notification.ReportFragment">
+
+            <TextView
+                android:id="@+id/reported_comment_textview"
+                style="@style/CineMates.SecondaryPageTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/reported_comment_text"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/report_list_textview"
+                style="@style/CineMates.SecondaryPageTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/report_list_text"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.003"
+                app:layout_constraintStart_toStartOf="@+id/reported_comment_textview"
+                app:layout_constraintTop_toBottomOf="@+id/included_comment" />
+
+            <TextView
+                android:id="@+id/report_list_owner_textview"
+                style="@style/CineMates.SecondaryPageTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/report_list_owner_text"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/reported_comment_textview"
+                app:layout_constraintTop_toBottomOf="@+id/report_list_text_textview" />
+
+            <TextView
+                android:id="@+id/report_type_textview"
+                style="@style/CineMates.SecondaryPageTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/report_type_text"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/report_list_owner_textview"
+                app:layout_constraintTop_toBottomOf="@+id/report_list_owner_text_textview" />
+
+            <TextView
+                android:id="@+id/report_outcome_textview"
+                style="@style/CineMates.SecondaryPageTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/report_outcome_text"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/report_type_textview"
+                app:layout_constraintTop_toBottomOf="@+id/report_type_text_textview" />
+
+            <TextView
+                android:id="@+id/report_outcome_description_textview"
+                style="@style/CineMates.SecondaryPageTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                android:text="@string/report_outcome_true_description_text"
+                android:textAlignment="viewStart"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/report_outcome_textview"
+                app:layout_constraintTop_toBottomOf="@+id/report_outcome_text_textview"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/report_type_text_textview"
+                style="@style/CineMates.SecondaryPageTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/raleway_bold"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/report_type_textview"
+                app:layout_constraintTop_toBottomOf="@+id/report_type_textview" />
+
+            <TextView
+                android:id="@+id/report_outcome_text_textview"
+                style="@style/CineMates.SecondaryPageTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/raleway_bold"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.003"
+                app:layout_constraintStart_toStartOf="@+id/report_outcome_textview"
+                app:layout_constraintTop_toBottomOf="@+id/report_outcome_textview" />
+
+            <TextView
+                android:id="@+id/report_list_owner_text_textview"
+                style="@style/CineMates.SecondaryPageTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/raleway_bold"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/report_list_owner_textview"
+                app:layout_constraintTop_toBottomOf="@+id/report_list_owner_textview" />
+
+            <TextView
+                android:id="@+id/report_list_text_textview"
+                style="@style/CineMates.SecondaryPageTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/raleway_bold"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/report_list_textview"
+                app:layout_constraintTop_toBottomOf="@+id/report_list_textview" />
+
+            <include
+                android:id="@+id/included_comment"
+                layout="@layout/comment_holder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/reported_comment_textview" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/report_gradient_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@drawable/top_to_bottom_horizontal_gradient"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/report_scrollview" />
+
+    <TextView
+        android:id="@+id/report_title_text_view"
+        style="@style/CineMates.SecondaryPageTitleTextView"
+        android:layout_height="wrap_content"
+        android:text="@string/report_information_title"
+        app:layout_constraintBottom_toBottomOf="@+id/back_icon_report"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintStart_toEndOf="@+id/back_icon_report"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/back_icon_report"
+        style="@style/CineMates.BackIcon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

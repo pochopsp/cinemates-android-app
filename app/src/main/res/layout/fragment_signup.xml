@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    tools:context=".ui.signup.SignUpFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        tools:context=".ui.signup.SignUpFragment">
+
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="70dp"
+            android:src="@drawable/ic_cinemateslogo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/signup_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/raleway_semibold"
+            android:text="@string/signup_screen"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/logoImageView"
+            app:layout_constraintStart_toStartOf="@+id/logoImageView"
+            app:layout_constraintTop_toBottomOf="@+id/logoImageView"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <FrameLayout
+            android:id="@+id/signup_gray_surface_layout"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="90dp"
+            android:background="@color/gray_signup_surface"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/signup_title"
+            app:layout_constraintVertical_bias="0.0">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/signup_server_unreachable_text_view"
+                    style="@style/CineMates.ErrorTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/server_unreachable"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/signup_confirm_password_text_input_layout" />
+
+                <TextView
+                    android:id="@+id/signup_generic_error_text_view"
+                    style="@style/CineMates.ErrorTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/generic_error"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/signup_confirm_password_text_input_layout" />
+
+                <TextView
+                    android:id="@+id/signup_in_progress"
+                    style="@style/CineMates.TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/signup_in_progress"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/signup_confirm_password_text_input_layout" />
+
+                <TextView
+                    android:id="@+id/signup_username_error_text_view"
+                    style="@style/CineMates.ErrorTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="60dp"
+                    android:text="@string/username_error"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/signup_username_already_taken_error_text_view"
+                    style="@style/CineMates.ErrorTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="60dp"
+                    android:text="@string/username_already_taken"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/signup_confirm_password_error_text_view"
+                    style="@style/CineMates.ErrorTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/confirm_password_error"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/signup_password_text_input_layout" />
+
+                <TextView
+                    android:id="@+id/signup_password_error_text_view"
+                    style="@style/CineMates.ErrorTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/password_error"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/signup_email_edit_text_layout" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/signup_username_edit_text_layout"
+                    style="@style/CineMates.TextInputLayout"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="60dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/signup_username_error_text_view"
+                    tools:ignore="LabelFor,RtlSymmetry">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/signup_username_edit_text"
+                        style="@style/CineMates.TextInputLayout.EditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="@string/username_signup_textfield"
+                        android:inputType="textEmailAddress" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/signup_email_edit_text_layout"
+                    style="@style/CineMates.TextInputLayout"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintEnd_toEndOf="@+id/signup_username_edit_text_layout"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/signup_username_edit_text_layout"
+                    app:layout_constraintTop_toBottomOf="@+id/signup_email_error_text_view"
+                    tools:ignore="LabelFor,RtlSymmetry">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/signup_email_edit_text"
+                        style="@style/CineMates.TextInputLayout.EditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="@string/email_signup_textfield"
+                        android:inputType="textEmailAddress" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/signup_password_text_input_layout"
+                    style="@style/CineMates.PasswordTextInputLayout"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintEnd_toEndOf="@+id/signup_email_edit_text_layout"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/signup_email_edit_text_layout"
+                    app:layout_constraintTop_toBottomOf="@+id/signup_password_error_text_view"
+                    tools:ignore="LabelFor,RtlSymmetry">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/signup_password_edit_text"
+                        style="@style/CineMates.TextInputLayout.EditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/password_signup_textfield"
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/signup_confirm_password_text_input_layout"
+                    style="@style/CineMates.PasswordTextInputLayout"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintEnd_toEndOf="@+id/signup_password_text_input_layout"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/signup_password_text_input_layout"
+                    app:layout_constraintTop_toBottomOf="@+id/signup_confirm_password_error_text_view">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/signup_confirm_password_edit_text"
+                        style="@style/CineMates.TextInputLayout.EditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/password_confirmation_signup_textfield"
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/signup_button"
+                    style="@style/CineMates.Button"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/signup_button"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
+                    app:layout_constraintEnd_toEndOf="@+id/signup_confirm_password_text_input_layout"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/signup_confirm_password_text_input_layout"
+                    app:layout_constraintTop_toBottomOf="@+id/signup_server_unreachable_text_view"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="32dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <TextView
+                        android:id="@+id/login_textbutton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="@font/raleway_regular"
+                        android:text="@string/have_account_button"
+                        android:textColor="@color/yellow_button"
+                        app:layout_constraintBottom_toBottomOf="@+id/login_text"
+                        app:layout_constraintEnd_toEndOf="@+id/signup_button"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/login_text"
+                        app:layout_constraintTop_toTopOf="@+id/login_text" />
+
+                    <TextView
+                        android:id="@+id/login_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/raleway_regular"
+                        android:text="@string/have_account"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/signup_email_error_text_view"
+                    style="@style/CineMates.ErrorTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/email_error"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/signup_username_edit_text_layout" />
+
+                <TextView
+                    android:id="@+id/email_already_taken_error_text_view"
+                    style="@style/CineMates.ErrorTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/email_already_taken"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/signup_username_edit_text_layout" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="114dp"
+            android:layout_height="112dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintBottom_toTopOf="@+id/signup_gray_surface_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/signup_title"
+            app:layout_constraintVertical_bias="0.0">
+
+            <ImageView
+                android:id="@+id/signup_profile_pic_placeholder_imageview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/signup_image_shape"
+                android:padding="12dp"
+                android:src="@drawable/ic_signup_profile_icon" />
+
+            <ImageView
+                android:id="@+id/signup_profile_pic_imageview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/signup_profile_pic_button"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="70dp"
+                android:backgroundTint="@color/black"
+                android:src="@drawable/ic_baseline_add_24"
+                app:backgroundTint="@color/black"
+                app:borderWidth="0dp"
+                app:fabCustomSize="35dp" />
+
+
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

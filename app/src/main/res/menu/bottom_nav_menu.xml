@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_outline_home_24"
+        android:title="@string/bottom_bar_homepage" />
+
+    <item
+        android:id="@+id/navigation_search"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="@string/bottom_bar_search" />
+
+    <item
+        android:id="@+id/navigation_discover_lists"
+        android:icon="@drawable/ic_baseline_list_24"
+        android:title="@string/bottom_bar_discover_lists" />
+
+    <item
+        android:id="@+id/navigation_suggest_movie"
+        android:icon="@drawable/ic_outline_movie_filter_24"
+        android:title="@string/bottom_bar_suggest_movie" />
+
+</menu>

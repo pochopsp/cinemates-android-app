@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.suggestmovie.SuggestMovieFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/suggest_movie_button"
+                style="@style/CineMates.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginEnd="80dp"
+                android:layout_marginBottom="32dp"
+                android:text="@string/suggest_me"
+                android:textSize="18dp"
+                app:cornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/suggest_movie_title"
+                style="@style/CineMates.TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/raleway_semibold"
+                android:text="@string/suggest_movie_title"
+                android:textAlignment="center"
+                android:textSize="21sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/suggest_movie_text_textview"
+                style="@style/CineMates.TextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="58dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="58dp"
+                android:fontFamily="@font/raleway_medium"
+                android:text="@string/suggest_movie_text"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/suggest_movie_title" />
+
+
+            <ImageView
+                android:id="@+id/suggest_movie_poster_imageview"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="104dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="104dp"
+                android:layout_marginBottom="16dp"
+                android:foreground="@drawable/suggest_movie_foreground_stroke"
+                app:layout_constraintDimensionRatio="0.67:1"
+                android:scaleType="fitXY"
+                android:src="@drawable/movie_box_cover_blurred"
+                app:layout_constraintBottom_toTopOf="@+id/suggest_movie_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/suggest_movie_text_textview" />
+
+            <TextView
+                android:id="@+id/question_mark_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_bold"
+                android:gravity="center"
+                android:text="@string/question_mark"
+                android:textSize="150sp"
+                app:layout_constraintBottom_toBottomOf="@+id/suggest_movie_poster_imageview"
+                app:layout_constraintEnd_toEndOf="@+id/suggest_movie_poster_imageview"
+                app:layout_constraintStart_toStartOf="@+id/suggest_movie_poster_imageview"
+                app:layout_constraintTop_toTopOf="@+id/suggest_movie_poster_imageview" />
+
+            <TextView
+                android:id="@+id/suggest_movie_name_textview"
+                style="@style/CineMates.TextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="30dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/raleway_semibold"
+                android:includeFontPadding="false"
+                android:maxLines="4"
+                android:text=""
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/suggest_movie_poster_imageview"
+                app:layout_constraintEnd_toEndOf="@+id/suggest_movie_poster_imageview"
+                app:layout_constraintStart_toStartOf="@+id/suggest_movie_poster_imageview" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</FrameLayout>

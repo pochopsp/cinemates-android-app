@@ -1,0 +1,58 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Cinemates" parent="Theme.MaterialComponents.Light">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryVariant">@color/black</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/orange</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:editTextBackground">@color/gray_text_field</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <!-- Customize your theme here. -->
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="android:windowBackground">@color/black</item>
+        <item name="android:itemTextAppearance">@style/CineMates.PopupItem</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.CineMates.MaterialAlertDialog</item>
+        <!-- Action mode customizations -->
+        <item name="actionModeStyle">@style/CineMates.ActionMode</item>
+        <item name="actionModeCloseButtonStyle">@style/CineMates.ActionMode.CloseButton</item>
+        <item name="windowActionModeOverlay">true</item>
+        <!-- showcaseView customizations -->
+        <item name="showcaseViewStyle">@style/CustomShowcaseTheme</item>
+    </style>
+
+
+    <style name="ThemeOverlay.CineMates.MaterialAlertDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="colorSurface">@color/dialog_surface</item>
+        <item name="alertDialogStyle">@style/CineMates.MaterialDialogStyle</item>
+        <item name="materialAlertDialogTitleTextStyle">@style/CineMates.MaterialAlertDialog.Title.Text</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/CineMates.MaterialAlertDialog.Body.Text</item>
+        <item name="buttonBarNegativeButtonStyle">@style/CineMates.MaterialDialogNegativeButtonStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/CineMates.MaterialDialogPositiveButtonStyle</item>
+        <item name="android:checkedTextViewStyle">@style/CineMates.MaterialDialogCheckedTextViewStyle</item>
+        <!-- this is the color for unchecked singleChoiceItem -->
+        <item name="colorControlNormal">@color/gray_bottom_icon</item>
+    </style>
+
+
+    <style name="Theme.Cinemates.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:popupMenuStyle">@style/PopupMenu</item>
+    </style>
+
+    <style name="PopupMenu" parent="@android:style/Widget.PopupMenu">
+        <item name="android:popupBackground">@color/popup_menu</item>>
+    </style>
+
+    <style name="Theme.Cinemates.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Cinemates.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>

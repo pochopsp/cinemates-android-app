@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/discover_lists_user_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:id="@+id/frameLayout5"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/discover_lists_user_image_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:id="@+id/white_circle2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/notification_image_profile_shape" />
+
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/discover_lists_username_textview"
+            style="@style/CineMates.UsernameInHolderTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="MeganFox"
+            android:textAlignment="viewStart"
+            app:layout_constraintBottom_toBottomOf="@+id/frameLayout5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.05"
+            app:layout_constraintStart_toEndOf="@+id/frameLayout5"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/discover_lists_movie_lists_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/discover_lists_user_layout">
+
+        <RelativeLayout
+            android:id="@+id/first_movielist_preview_layout"
+            android:layout_width="match_parent"
+            android:layout_height="81dp"
+            android:orientation="vertical"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/first_empty_list_imageview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:foreground="@drawable/movielist_preview_overlay"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/CineMates.RoundedImageViewStyle"
+                app:srcCompat="@drawable/empty_list_background" />
+
+            <ImageView
+                android:id="@+id/first_notempty_list_imageview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:foreground="@drawable/notempty_list_background"
+                android:visibility="visible" />
+
+            <FrameLayout
+                android:id="@+id/first_4_movie_poster_layout"
+                android:layout_width="54dp"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="0dp"
+                android:layout_toStartOf="@+id/first_3_movie_poster_layout">
+
+                <ImageView
+                    android:id="@+id/first_4_movie_poster_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="false"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY" />
+
+                <ImageView
+                    android:id="@+id/first_4_movie_poster_overlay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="false"
+                    android:foreground="@drawable/movielist_holder_poster_gradient"
+                    android:visibility="visible" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/first_3_movie_poster_layout"
+                android:layout_width="54dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_toStartOf="@+id/first_2_movie_poster_layout">
+
+                <ImageView
+                    android:id="@+id/first_3_movie_poster_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="false"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY" />
+
+                <ImageView
+                    android:id="@+id/first_3_movie_poster_overlay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="false"
+                    android:foreground="@drawable/movielist_holder_poster_gradient"
+                    android:visibility="visible" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/first_2_movie_poster_layout"
+                android:layout_width="54dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_toStartOf="@+id/first_1_movie_poster_layout">
+
+                <ImageView
+                    android:id="@+id/first_2_movie_poster_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="false"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY" />
+
+                <ImageView
+                    android:id="@+id/first_2_movie_poster_overlay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="false"
+                    android:foreground="@drawable/movielist_holder_poster_gradient"
+                    android:visibility="visible" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/first_1_movie_poster_layout"
+                android:layout_width="54dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="0dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/first_1_movie_poster_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    app:shapeAppearanceOverlay="@style/CineMates.RightRoundedImageViewStyle" />
+
+                <ImageView
+                    android:id="@+id/first_1_movie_poster_overlay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="false"
+                    android:foreground="@drawable/movielist_holder_poster_gradient"
+                    android:visibility="visible" />
+            </FrameLayout>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/first_list_overlay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:foreground="@drawable/movielist_preview_overlay"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/CineMates.RoundedImageViewStyle" />
+
+            <TextView
+                android:id="@+id/first_list_title_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginBottom="0dp"
+                android:fontFamily="@font/raleway_bold"
+                android:includeFontPadding="false"
+                android:textAlignment="viewStart"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/first_reactions_icon"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_below="@+id/first_list_title_textview"
+                android:layout_alignStart="@+id/first_list_title_textview"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/ic_baseline_thumb_up_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/first_reactions_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="4dp"
+                android:layout_marginBottom="14dp"
+                android:layout_toEndOf="@+id/first_reactions_icon"
+                android:fontFamily="@font/lato_bold"
+                android:includeFontPadding="false"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/first_comments_icon"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_alignTop="@+id/first_reactions_icon"
+                android:layout_alignBottom="@+id/first_reactions_icon"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_toEndOf="@+id/first_reactions_number"
+                android:src="@drawable/ic_baseline_mode_comment_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/first_comments_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/first_reactions_number"
+                android:layout_marginStart="4dp"
+                android:layout_marginBottom="0dp"
+                android:layout_toEndOf="@+id/first_comments_icon"
+                android:fontFamily="@font/lato_bold"
+                android:includeFontPadding="false"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/first_avg_rating_icon"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_alignBottom="@+id/first_reactions_icon"
+                android:layout_marginStart="11dp"
+                android:layout_marginBottom="0.5dp"
+                android:layout_toEndOf="@+id/first_comments_number"
+                android:src="@drawable/ic_baseline_star_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/first_avg_rating_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/first_reactions_number"
+                android:layout_marginStart="4dp"
+                android:layout_marginBottom="0dp"
+                android:layout_toEndOf="@+id/first_avg_rating_icon"
+                android:fontFamily="@font/lato_bold"
+                android:includeFontPadding="false"
+                android:textSize="12sp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/second_movielist_preview_layout"
+            android:layout_width="match_parent"
+            android:layout_height="81dp"
+            android:layout_marginTop="12dp"
+            android:orientation="vertical"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="@+id/first_movielist_preview_layout"
+            app:layout_constraintStart_toStartOf="@+id/first_movielist_preview_layout"
+            app:layout_constraintTop_toBottomOf="@+id/first_movielist_preview_layout">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/second_empty_list_imageview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:foreground="@drawable/movielist_preview_overlay"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/CineMates.RoundedImageViewStyle"
+                app:srcCompat="@drawable/empty_list_background" />
+
+            <ImageView
+                android:id="@+id/second_notempty_list_imageview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:foreground="@drawable/notempty_list_background"
+                android:visibility="visible" />
+
+            <FrameLayout
+                android:id="@+id/second_4_movie_poster_layout"
+                android:layout_width="54dp"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="0dp"
+                android:layout_toStartOf="@+id/second_3_movie_poster_layout">
+
+                <ImageView
+                    android:id="@+id/second_4_movie_poster_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="false"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY" />
+
+                <ImageView
+                    android:id="@+id/second_4_movie_poster_overlay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="false"
+                    android:foreground="@drawable/movielist_holder_poster_gradient"
+                    android:visibility="visible" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/second_3_movie_poster_layout"
+                android:layout_width="54dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_toStartOf="@+id/second_2_movie_poster_layout">
+
+                <ImageView
+                    android:id="@+id/second_3_movie_poster_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="false"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY" />
+
+                <ImageView
+                    android:id="@+id/second_3_movie_poster_overlay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="false"
+                    android:foreground="@drawable/movielist_holder_poster_gradient"
+                    android:visibility="visible" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/second_2_movie_poster_layout"
+                android:layout_width="54dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_toStartOf="@+id/second_1_movie_poster_layout">
+
+                <ImageView
+                    android:id="@+id/second_2_movie_poster_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="false"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY" />
+
+                <ImageView
+                    android:id="@+id/second_2_movie_poster_overlay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="false"
+                    android:foreground="@drawable/movielist_holder_poster_gradient"
+                    android:visibility="visible" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/second_1_movie_poster_layout"
+                android:layout_width="54dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="0dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/second_1_movie_poster_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    app:shapeAppearanceOverlay="@style/CineMates.RightRoundedImageViewStyle" />
+
+                <ImageView
+                    android:id="@+id/second_1_movie_poster_overlay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="false"
+                    android:foreground="@drawable/movielist_holder_poster_gradient"
+                    android:visibility="visible" />
+            </FrameLayout>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/second_list_overlay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:foreground="@drawable/movielist_preview_overlay"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/CineMates.RoundedImageViewStyle" />
+
+            <TextView
+                android:id="@+id/second_list_title_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="28dp"
+                android:fontFamily="@font/raleway_bold"
+                android:includeFontPadding="false"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/second_reactions_icon"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_below="@+id/second_list_title_textview"
+                android:layout_alignStart="@+id/second_list_title_textview"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="6dp"
+                android:src="@drawable/ic_baseline_thumb_up_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/second_reactions_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="4.5dp"
+                android:layout_marginBottom="14dp"
+                android:layout_toEndOf="@+id/second_reactions_icon"
+                android:fontFamily="@font/lato_bold"
+                android:includeFontPadding="false"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/second_comments_icon"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_alignTop="@+id/second_reactions_icon"
+                android:layout_alignBottom="@+id/second_reactions_icon"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_toEndOf="@+id/second_reactions_number"
+                android:src="@drawable/ic_baseline_mode_comment_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/second_comments_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/second_reactions_number"
+                android:layout_marginStart="4dp"
+                android:layout_marginBottom="0dp"
+                android:layout_toEndOf="@+id/second_comments_icon"
+                android:fontFamily="@font/lato_bold"
+                android:includeFontPadding="false"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/second_avg_rating_icon"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_alignBottom="@+id/second_reactions_icon"
+                android:layout_marginStart="11dp"
+                android:layout_marginBottom="0.5dp"
+                android:layout_toEndOf="@+id/second_comments_number"
+                android:src="@drawable/ic_baseline_star_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/second_avg_rating_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/second_comments_number"
+                android:layout_marginStart="4dp"
+                android:layout_marginBottom="0dp"
+                android:layout_toEndOf="@+id/second_avg_rating_icon"
+                android:fontFamily="@font/lato_bold"
+                android:includeFontPadding="false"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

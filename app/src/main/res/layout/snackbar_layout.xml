@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/snackbar_relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/snackbar_background"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/message_snackbar_textview"
+        style="@style/CineMates.TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/close_snackbar_icon"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toStartOf="@+id/close_snackbar_icon"
+        android:fontFamily="@font/raleway_semibold"
+        android:text=""
+        android:textAlignment="viewStart"
+        android:textSize="14sp" />
+
+    <ImageView
+        android:id="@+id/close_snackbar_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="0dp"
+        app:srcCompat="@drawable/ic_baseline_close_24"
+        app:tint="@color/white" />
+
+</RelativeLayout>

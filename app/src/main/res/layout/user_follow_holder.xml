@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/comment_holder_relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="11dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageView
+            android:id="@+id/follow_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/notification_image_profile_shape" />
+
+        <ImageView
+            android:id="@+id/follow_image_view2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/notification_image_profile_shape" />
+
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/username_follow_textview"
+        style="@style/CineMates.UsernameInHolderTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/frameLayout"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="10dp"
+        android:layout_toStartOf="@+id/following_outlined_button"
+        android:layout_toEndOf="@+id/frameLayout"
+        android:text="" />
+
+    <Button
+        android:id="@+id/remove_follow_button"
+        style="@style/CineMates.Button.Follow.Remove"
+        android:layout_alignBottom="@+id/frameLayout"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="0dp"
+        android:text="@string/remove"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/follow_button"
+        style="@style/CineMates.Button.Follow"
+        android:layout_alignBottom="@+id/frameLayout"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="0dp"
+        android:text="@string/follow_user"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/pending_follow_button"
+        style="@style/CineMates.Button.Follow.Pending"
+        android:layout_alignBottom="@+id/frameLayout"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="0dp"
+        android:text="@string/pending_follow_user"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/following_outlined_button"
+        style="@style/CineMates.Button.Follow.Following"
+        android:layout_alignStart="@+id/remove_follow_button"
+        android:layout_alignBottom="@+id/remove_follow_button"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="0dp"
+        android:text="@string/following_user"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.65" />
+
+</RelativeLayout>

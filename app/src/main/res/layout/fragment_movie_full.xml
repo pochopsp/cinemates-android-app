@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:id="@+id/moviefull_contraint_layout"
+    tools:context=".ui.movie.MovieFragment" >
+
+    <ScrollView
+        android:id="@+id/moviefull_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/moviefull_poster_imageview_container"
+                style="@style/CineMates.RoundedMoviePosterMaterialCardView"
+                android:layout_width="100dp"
+                android:layout_height="178dp"
+                android:layout_marginTop="46dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.004"
+                app:layout_constraintStart_toStartOf="@+id/moviefull_description_textview"
+                app:layout_constraintTop_toBottomOf="@+id/moviefull_description_textview"
+                app:layout_constraintVertical_bias="0.0">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/moviefull_poster_imageview"
+                        android:layout_width="match_parent"
+                        android:layout_height="156dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/no_poster_available"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <RelativeLayout
+                        android:id="@+id/movie_full_tmdb_rating_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="22dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/moviefull_poster_imageview">
+
+                        <ImageView
+                            android:id="@+id/movie_poster_tmdb_rating_background_imageView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/movie_poster_tmdb_rating_background" />
+
+                        <TextView
+                            android:id="@+id/moviefull_tmdb_rating_text_textview"
+                            style="@style/CineMates.TextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginBottom="5dp"
+                            android:includeFontPadding="false"
+                            android:text="@string/tmdb_rating_label"
+                            android:textSize="10sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/moviefull_poster_imageview"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.14"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <TextView
+                            android:id="@+id/moviefull_tmdb_rating_textview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="0dp"
+                            android:fontFamily="@font/lato_bold"
+                            android:text="5"
+                            android:textAlignment="center"
+                            android:textSize="15sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/moviefull_tmdb_rating_text_textview"
+                            app:layout_constraintEnd_toEndOf="@+id/moviefull_poster_imageview"
+                            app:layout_constraintHorizontal_bias="0.42"
+                            app:layout_constraintStart_toEndOf="@+id/moviefull_tmdb_rating_text_textview"
+                            app:layout_constraintTop_toTopOf="@+id/moviefull_tmdb_rating_text_textview" />
+                    </RelativeLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/moviefull_release_date_textview"
+                style="@style/CineMates.MovieDetailsLabel"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="46dp"
+                android:text="@string/release_date"
+                app:layout_constraintStart_toEndOf="@+id/moviefull_poster_imageview_container"
+                app:layout_constraintTop_toBottomOf="@+id/moviefull_description_textview" />
+
+            <TextView
+                android:id="@+id/moviefull_release_date_text_textview"
+                style="@style/CineMates.TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/lato_regular"
+                android:text="13/02/2020"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/moviefull_release_date_textview"
+                app:layout_constraintStart_toEndOf="@+id/moviefull_release_date_textview"
+                app:layout_constraintTop_toTopOf="@+id/moviefull_release_date_textview" />
+
+            <TextView
+                android:id="@+id/moviefull_status_text_textview"
+                style="@style/CineMates.TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/raleway_semibold"
+                android:text="Rilasciato"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/moviefull_status_textview"
+                app:layout_constraintStart_toEndOf="@+id/moviefull_status_textview"
+                app:layout_constraintTop_toTopOf="@+id/moviefull_status_textview" />
+
+            <TextView
+                android:id="@+id/moviefull_director_text_textview"
+                style="@style/CineMates.TextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/raleway_semibold"
+                android:text="Jeff Fowler"
+                android:textAlignment="textStart"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/moviefull_director_textview"
+                app:layout_constraintEnd_toEndOf="@+id/expand_description_text_button"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/moviefull_director_textview"
+                app:layout_constraintTop_toTopOf="@+id/moviefull_director_textview" />
+
+            <TextView
+                android:id="@+id/moviefull_budget_text_textview"
+                style="@style/CineMates.TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/lato_regular"
+                android:text="$85 mln"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/moviefull_budget_textview"
+                app:layout_constraintStart_toEndOf="@+id/moviefull_budget_textview"
+                app:layout_constraintTop_toTopOf="@+id/moviefull_budget_textview" />
+
+            <TextView
+                android:id="@+id/moviefull_revenue_text_textview"
+                style="@style/CineMates.TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/lato_regular"
+                android:text="$306 mln"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/moviefull_revenue_textview"
+                app:layout_constraintStart_toEndOf="@+id/moviefull_revenue_textview"
+                app:layout_constraintTop_toTopOf="@+id/moviefull_revenue_textview" />
+
+            <TextView
+                android:id="@+id/moviefull_status_textview"
+                style="@style/CineMates.MovieDetailsLabel"
+                android:text="@string/status"
+                app:layout_constraintStart_toStartOf="@+id/moviefull_release_date_textview"
+                app:layout_constraintTop_toBottomOf="@+id/moviefull_release_date_textview" />
+
+            <TextView
+                android:id="@+id/moviefull_director_textview"
+                style="@style/CineMates.MovieDetailsLabel"
+                android:text="@string/director"
+                app:layout_constraintStart_toStartOf="@+id/moviefull_status_textview"
+                app:layout_constraintTop_toBottomOf="@+id/moviefull_status_textview" />
+
+            <TextView
+                android:id="@+id/moviefull_budget_textview"
+                style="@style/CineMates.MovieDetailsLabel"
+                android:text="@string/budget"
+                app:layout_constraintStart_toStartOf="@+id/moviefull_director_textview"
+                app:layout_constraintTop_toBottomOf="@+id/moviefull_director_textview" />
+
+            <TextView
+                android:id="@+id/moviefull_revenue_textview"
+                style="@style/CineMates.MovieDetailsLabel"
+                android:text="@string/revenue"
+                app:layout_constraintStart_toStartOf="@+id/moviefull_budget_textview"
+                app:layout_constraintTop_toBottomOf="@+id/moviefull_budget_textview" />
+
+            <ImageView
+                android:id="@+id/moviefull_backdrop_imageview"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:foreground="@drawable/gradient"
+                android:scaleType="centerCrop"
+                android:src="@drawable/no_backdrop_available"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/moviefull_title_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/raleway_bold"
+                android:text="Sonic - Il film"
+                android:textAlignment="center"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="@+id/moviefull_backdrop_imageview"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/moviefull_cast_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="212dp"
+                android:fontFamily="@font/raleway_semibold"
+                android:text="@string/movie_cast_label"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/moviefull_poster_imageview_container"
+                app:layout_constraintTop_toBottomOf="@+id/moviefull_poster_imageview_container" />
+
+            <View
+                android:id="@+id/horizontal_line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+                android:background="@color/gray_line"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/moviefull_title_textview"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <View
+                android:id="@+id/horizontal_line2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+                android:background="@color/gray_line"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/moviefull_year_duration_genres_layout"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/moviefull_year_duration_genres_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/moviefull_backdrop_imageview">
+
+                <TextView
+                    android:id="@+id/moviefull_year_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="2020"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/textView3"
+                    android:layout_width="3dp"
+                    android:layout_height="3dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/notification_dot"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/moviefull_year_textview"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:id="@+id/moviefull_runtime_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="1h 39min"
+                    android:textSize="15sp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView3"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/moviefull_runtime_dot_separator"
+                    android:layout_width="3dp"
+                    android:layout_height="3dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/notification_dot"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/moviefull_runtime_textview"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:id="@+id/moviefull_genre_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="Azione, Avventura, Comedy"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/moviefull_runtime_dot_separator"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/moviefull_description_textview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="20dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/raleway_regular"
+                android:maxLines="3"
+                android:text="It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum..."
+                android:textAlignment="viewStart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/horizontal_line2" />
+
+            <TextView
+                android:id="@+id/expand_description_text_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/raleway_regular"
+                android:text="@string/expand_description"
+                android:textColor="@color/yellow_button"
+                app:layout_constraintBottom_toTopOf="@+id/moviefull_poster_imageview_container"
+                app:layout_constraintEnd_toEndOf="@+id/moviefull_description_textview"
+                app:layout_constraintTop_toBottomOf="@+id/moviefull_description_textview"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/moviefull_trailer_outlined_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="64dp"
+                android:layout_marginBottom="32dp"
+                android:src="@drawable/ic_baseline_play_circle_filled_54"
+                android:text="@string/trailer"
+                app:layout_constraintBottom_toTopOf="@+id/moviefull_title_textview"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/moviefull_back_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_baseline_keyboard_backspace_24_with_border"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/moviefull_add_to_list_outlined_button"
+                style="@style/CineMates.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="8dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="@string/add_to_list"
+                app:icon="@android:drawable/ic_input_add"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconSize="20dp"
+                app:iconTint="@color/yellow_button"
+                app:layout_constraintBottom_toBottomOf="@+id/moviefull_poster_imageview_container"
+                app:layout_constraintEnd_toEndOf="@+id/expand_description_text_button"
+                app:layout_constraintStart_toStartOf="@+id/moviefull_revenue_textview"
+                app:layout_constraintTop_toBottomOf="@+id/moviefull_revenue_textview"
+                app:rippleColor="@color/yellow_button" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cast_recyclerview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/moviefull_cast_textview"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+    <!-- This initially-hidden ImageView will hold the expanded version of the movie poster.-->
+    <ImageView
+        android:id="@+id/expanded_movie_poster"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="0.67:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

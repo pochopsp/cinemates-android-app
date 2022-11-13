@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    tools:context=".ui.user.movielist.other.MovieListFragment">
+
+    <ImageView
+        android:id="@+id/other_user_movie_list_back_icon"
+        style="@style/CineMates.BackIcon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/other_user_movie_list_name"
+        style="@style/CineMates.SecondaryPageTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/other_user_movie_list_back_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/other_user_movie_list_copy_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/yellow_button"
+        android:src="@drawable/ic_baseline_content_copy_24"
+        app:tint="@color/black"
+        app:maxImageSize="16dp"
+        app:fabCustomSize="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/other_user_movie_list_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/other_user_movie_list_name" />
+
+    <TextView
+        android:id="@+id/other_user_movie_list_author_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/raleway_light"
+        android:text="@string/fragment_movie_list_made_by"
+        android:textColor="@color/following_gray"
+        app:layout_constraintStart_toStartOf="@+id/other_user_movie_list_back_icon"
+        app:layout_constraintTop_toBottomOf="@+id/other_user_movie_list_name" />
+
+    <TextView
+        android:id="@+id/other_user_movie_list_author_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:fontFamily="@font/raleway_medium"
+        app:layout_constraintBottom_toBottomOf="@+id/other_user_movie_list_author_label"
+        app:layout_constraintStart_toEndOf="@+id/other_user_movie_list_author_label"
+        app:layout_constraintTop_toTopOf="@+id/other_user_movie_list_author_label" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/other_user_movie_list_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        android:visibility="invisible"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/other_user_movie_list_interactions_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/other_user_movie_list_author_label"
+        app:spanCount="3" />
+
+    <ImageView
+        android:id="@+id/movie_posters_recycler_view_gradient_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@drawable/top_to_bottom_horizontal_gradient"
+        app:layout_constraintTop_toTopOf="@+id/other_user_movie_list_recycler_view" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/other_user_movie_list_interactions_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/dialog_surface"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/other_user_movie_list_interactions_buttons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/other_user_movie_list_reactions_button"
+                style="@style/CineMates.MovieInteractionButton"
+                app:icon="@drawable/ic_baseline_thumb_up_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/other_user_movie_list_comments_button"
+                style="@style/CineMates.MovieInteractionButton"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                app:icon="@drawable/ic_baseline_mode_comment_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/other_user_movie_list_ratings_button"
+                app:layout_constraintStart_toEndOf="@+id/other_user_movie_list_reactions_button"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/other_user_movie_list_ratings_button"
+                style="@style/CineMates.MovieInteractionButton"
+                app:icon="@drawable/ic_baseline_star_24"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/other_user_movie_list_no_movies_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginEnd="52dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/other_user_movie_list_recycler_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/other_user_movie_list_recycler_view">
+
+        <TextView
+            android:id="@+id/other_user_movie_list_no_movies_1_textview"
+            style="@style/CineMates.SecondaryPageTitleTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/other_user_no_movies_in_list"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

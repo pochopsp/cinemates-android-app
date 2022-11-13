@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    <style name="CineMates.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:textColorHint">@color/gray_placeholder_text</item>
+        <item name="hintEnabled">false</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="android:theme">@style/CineMates.TextInputLayoutYellowCursorColor</item>"
+    </style>
+
+    <style name="CineMates.TextInputLayoutYellowCursorColor" parent="ThemeOverlay.MaterialComponents.TextInputEditText.OutlinedBox">
+        <item name="colorControlActivated">@color/yellow_button</item>
+    </style>
+
+    <style name="CineMates.RoundedMoviePosterMaterialCardView" parent="">
+        <item name="strokeColor">@color/gray_signup_surface</item>
+        <item name="strokeWidth">0.3dp</item>
+        <item name="cardBackgroundColor">#000000</item>
+        <item name="cardCornerRadius">10dp</item>
+    </style>
+
+    <style name="CineMates.TextInputLayout.EditTextStyle" parent="Widget.MaterialComponents.TextInputEditText.OutlinedBox">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:fontFamily">@font/raleway_regular</item>
+        <item name="android:background">@drawable/rounded10dp_rectangle_shape_gray</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:paddingStart">15dp</item>
+        <item name="android:textColorHint">@color/gray_placeholder_text</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textCursorDrawable">@null</item>
+    </style>
+
+    <style name="CineMates.BackIcon" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">18dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:src">@drawable/ic_baseline_keyboard_backspace_24</item>
+    </style>
+
+    <style name="CineMates.SecondaryPageTitleTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/raleway_regular</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+    <style name="CineMates.CarouselRecyclerTitleTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">15dp</item>
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:fontFamily">@font/raleway_regular</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="CineMates.MoreOptionsIcon" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:layout_marginEnd">14dp</item>
+        <item name="android:src">@drawable/ic_baseline_more_vert_24</item>
+    </style>
+
+    <style name="CineMates.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">@color/yellow_button</item>
+        <item name="android:fontFamily">@font/raleway_extrabold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:gravity">center</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="CineMates.Button.Follow" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">@color/yellow_button</item>
+        <item name="android:fontFamily">@font/raleway_extrabold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:gravity">center</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="CineMates.Button.Follow.Pending" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">@color/pending_follow_yellow</item>
+        <item name="android:fontFamily">@font/raleway_extrabold</item>
+        <item name="android:textColor">@color/pending_follow_gray</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:enabled">false</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:gravity">center</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="CineMates.OutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textColor">@color/yellow_button</item>
+        <item name="android:fontFamily">@font/raleway_semibold</item>
+        <item name="strokeColor">@color/yellow_button</item>
+        <item name="rippleColor">@color/yellow_button</item>
+        <item name="cornerRadius">7dp</item>
+        <item name="strokeWidth">1.5dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="CineMates.Button.Follow.Following" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textColor">@color/following_gray</item>
+        <item name="android:fontFamily">@font/raleway_semibold</item>
+        <item name="strokeColor">@color/following_gray</item>
+        <item name="rippleColor">@color/following_gray</item>
+        <item name="cornerRadius">7dp</item>
+        <item name="strokeWidth">1.5dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:layout_width">100dp</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:insetTop">10dp</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="CineMates.Button.Follow.Remove" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textColor">@color/red_on_dark</item>
+        <item name="android:fontFamily">@font/raleway_semibold</item>
+        <item name="strokeColor">@color/red_on_dark</item>
+        <item name="rippleColor">@color/red_on_dark</item>
+        <item name="cornerRadius">7dp</item>
+        <item name="strokeWidth">1.5dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">45dp</item>
+    </style>
+
+    <style name="CineMates.ErrorTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/raleway_medium</item>
+        <item name="android:textColor">@color/red_on_dark</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="CineMates.TextView" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/raleway_regular</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="CineMates.UsernameInHolderTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/raleway_medium</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="CineMates.MovieDetailsLabel" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentStart">true</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_marginTop">14dp</item>
+        <item name="android:textColor">@color/movie_gray_text</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/raleway_light</item>
+    </style>
+
+    <style name="CineMates.Topbar" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/raleway_regular</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="CineMates.PopupItem" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/raleway_bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="CineMates.PasswordTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="passwordToggleEnabled">true</item>
+        <item name="passwordToggleTint">@color/gray_placeholder_text</item>
+        <item name="android:textColorHint">@color/gray_placeholder_text</item>
+        <item name="hintEnabled">false</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="android:theme">@style/CineMates.TextInputLayoutYellowCursorColor</item>"
+    </style>
+
+    <style name="CineMates.SearchTextInputLayout" parent="Widget.Design.TextInputLayout">
+        <item name="passwordToggleTint">@color/gray_placeholder_text</item>
+        <item name="android:textColorHint">@color/gray_placeholder_text</item>
+        <item name="hintEnabled">false</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+    </style>
+
+    <style name="CineMates.RoundedImageViewStyle" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">20%</item>
+    </style>
+
+    <style name="CineMates.RightRoundedImageViewStyle" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">0%</item>
+        <item name="cornerSizeBottomLeft">0%</item>
+        <item name="cornerSize">20%</item>
+    </style>
+
+    <style name="CineMates.LeftRoundedImageViewStyle" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">0%</item>
+        <item name="cornerSizeBottomRight">0%</item>
+        <item name="cornerSize">8%</item>
+    </style>
+
+    <style name="CineMates.TopRoundedImageViewStyle" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeBottomLeft">0%</item>
+        <item name="cornerSizeBottomRight">0%</item>
+        <item name="cornerSize">10%</item>
+    </style>
+
+
+    <style name="CineMates.Switch" parent="">
+        <item name="colorOnSurface">@color/thumb_switch</item>
+        <item name="colorSecondary">@color/track_switch</item>
+    </style>
+
+    <style name="CineMates.TabText" parent="TextAppearance.Design.Tab">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/raleway_bold</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="CustomBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CineMates.BottomSheet</item>
+    </style>
+
+    <style name="CineMates.BottomSheet" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="CineMates.BottomSheetWithoutDim" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="bottomSheetStyle">@style/bottomSheetStyleWrapper</item>
+    </style>
+
+    <style name="bottomSheetStyleWrapper" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+
+    <style name="CineMates.BottomSheetButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:backgroundTint">#00000000</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:paddingStart">18dp</item>
+        <item name="android:fontFamily">@font/raleway_medium</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <style name="CineMates.SettingsTextButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:textColor">@color/user_settings_text_button_states_color</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:fontFamily">@font/raleway_semibold</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="rippleColor">@color/yellow_button</item>
+    </style>
+
+    <style name="CineMates.OnlyIconWithNoBorderButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="cornerRadius">100dp</item>
+        <item name="android:layout_width">35dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">5dp</item>
+        <item name="android:paddingEnd">5dp</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconPadding">0dp</item>
+        <item name="iconSize">25dp</item>
+        <item name="strokeWidth">0dp</item>
+    </style>
+
+    <style name="CineMates.OutlinedButtonWithNoText" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="cornerRadius">4dp</item>
+        <item name="strokeWidth">1.6dp</item>
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">42dp</item>
+        <item name="android:paddingStart">5dp</item>
+        <item name="android:paddingEnd">5dp</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconPadding">0dp</item>
+        <item name="iconSize">25dp</item>
+    </style>
+
+
+    <style name="CineMates.MovieInteractionButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="iconGravity">textStart</item>
+        <item name="iconPadding">12dp</item>
+        <item name="iconSize">25dp</item>
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="cornerRadius">100dp</item>
+        <item name="iconTint">@color/white</item>
+        <item name="rippleColor">@color/gray_placeholder_text</item>
+        <item name="strokeWidth">0dp</item>
+    </style>
+
+
+    <style name="CineMates.ProgressIndicator" parent="Widget.MaterialComponents.CircularProgressIndicator">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:indeterminate">true</item>
+        <item name="trackColor">@color/yellow_button</item>
+    </style>
+
+    <style name="CineMates.ActionMode" parent="@style/Widget.AppCompat.ActionMode">
+        <item name="background">@color/yellow_add_to_list</item>
+        <item name="height">40dp</item>
+        <item name="titleTextStyle">@style/CineMates.ActionMode.Title</item>
+    </style>
+
+    <style name="CineMates.ActionMode.CloseButton" parent="@style/Widget.AppCompat.Light.ActionButton.CloseMode">
+        <item name="android:tint">@color/white</item>
+    </style>
+
+    <style name="CineMates.ActionMode.Title" parent="@style/TextAppearance.AppCompat.Widget.ActionMode.Title">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <!-- BEGIN CUSTOM DIALOG STYLES -->
+    <style name="CineMates.MaterialDialogStyle" parent="MaterialAlertDialog.MaterialComponents">
+        <item name="shapeAppearance">@style/CineMates.RoundedDialogShapeAppearance</item>
+    </style>
+
+    <style name="CineMates.RoundedDialogShapeAppearance" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8%</item>
+    </style>
+
+    <style name="CineMates.MaterialAlertDialog.Title.Text" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:textColor">@color/dialog_title</item>
+        <item name="android:fontFamily">@font/raleway_bold</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="CineMates.MaterialAlertDialog.Body.Text" parent="MaterialAlertDialog.MaterialComponents.Body.Text">
+        <item name="android:textColor">@color/dialog_body</item>
+        <item name="fontFamily">@font/raleway_semibold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+    </style>
+
+    <style name="CineMates.MaterialDialogCheckedTextViewStyle" parent="@style/Widget.MaterialComponents.CheckedTextView">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/raleway_semibold</item>
+    </style>
+
+    <style name="CineMates.MaterialDialogNegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="materialThemeOverlay">
+            @style/CineMates.ThemeOverlay.MaterialDialogNegativeButton
+        </item>
+    </style>
+
+    <style name="CineMates.MaterialDialogPositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="materialThemeOverlay">
+            @style/CineMates.ThemeOverlay.MaterialDialogPositiveButton
+        </item>
+    </style>
+
+    <style name="CineMates.ThemeOverlay.MaterialDialogNegativeButton" parent="">
+        <item name="colorPrimary">@color/dialog_negative_button</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="CineMates.ThemeOverlay.MaterialDialogPositiveButton" parent="">
+        <!-- customize colorPrimary for the enabled color -->
+        <item name="colorPrimary">@color/dialog_positive_button</item>
+        <!-- customize colorOnSurface for the disable color -->
+        <item name="colorOnSurface">@color/gray_placeholder_text</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <!-- END CUSTOM DIALOG STYLES -->
+
+    <!-- BEGIN CUSTOM SHOWCASE -->
+    <style name="CustomShowcaseTheme" parent="ShowcaseView.Light">
+        <item name="sv_backgroundColor">@color/tooltip_color</item>
+        <item name="sv_showcaseColor">@color/orange</item>
+        <item name="sv_titleTextAppearance">@style/CustomTitle</item>
+        <item name="sv_detailTextAppearance">@style/CustomDetailText</item>
+    </style>
+
+    <style name="CustomTitle" parent="TextAppearance.ShowcaseView.Title">
+        <item name="fontFamily">@font/raleway_semibold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="CustomDetailText" parent="TextAppearance.ShowcaseView.Detail">
+        <item name="fontFamily">@font/raleway_regular</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <!-- END CUSTOM SHOWCASE -->
+
+
+    <!-- CUSTOMIZING com.whiteelephant.monthpicker.MonthPickerDialog -->
+    <style name="MonthPickerDialogStyle">
+        <item name="headerBgColor">@color/yellow_button</item>
+        <item name="headerFontColorSelected">#fff</item>
+        <item name="headerFontColorNormal">#85FFFFFF</item>
+        <item name="headerTitleColor">#fff</item>
+        <item name="dialogActionButtonColor">@color/yellow_button</item>
+    </style>
+
+    <style name="no_elements_in_view_title" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/raleway_semibold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="no_elements_in_view_subtitle" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/raleway_medium</item>
+        <item name="android:textColor">@color/gray_text</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+</resources>

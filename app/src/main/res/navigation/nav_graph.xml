@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_login">
+
+    <fragment
+        android:id="@+id/nav_login"
+        android:name="it.unina.cinemates.ui.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/nav_signup"
+        android:name="it.unina.cinemates.ui.signup.SignUpFragment"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup" />
+    <fragment
+        android:id="@+id/nav_forgot_password"
+        android:name="it.unina.cinemates.ui.recoverpassword.RecoverPasswordFragment"
+        android:label="fragment_forgot_password"
+        tools:layout="@layout/fragment_recover_password" />
+    <fragment
+        android:id="@+id/nav_confirmation_code"
+        android:name="it.unina.cinemates.ui.recoverpassword.ConfirmationCodeFragment"
+        android:label="fragment_confirmation_code"
+        tools:layout="@layout/fragment_recover_password_confirmation_code" />
+    <fragment
+        android:id="@+id/nav_new_password"
+        android:name="it.unina.cinemates.ui.recoverpassword.NewPasswordFragment"
+        android:label="fragment_new_password"
+        tools:layout="@layout/fragment_recover_password_new_password" />
+    <fragment
+        android:id="@+id/nav_recover_password_success"
+        android:name="it.unina.cinemates.ui.recoverpassword.RecoverPasswordSuccessFragment"
+        android:label="fragment_change_password_success"
+        tools:layout="@layout/fragment_recover_password_success" />
+    <fragment
+        android:id="@+id/nav_signup_success"
+        android:name="it.unina.cinemates.ui.signup.SignUpSuccessFragment"
+        android:label="fragment_sign_up_success"
+        tools:layout="@layout/fragment_signup_success" />
+</navigation>

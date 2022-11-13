@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:focusableInTouchMode="true"
+    tools:context=".ui.user.customMovielists.logged.CustomMovieListsFragment">
+
+    <ImageView
+        android:id="@+id/logged_user_other_lists_back_icon"
+        style="@style/CineMates.BackIcon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/logged_user_other_lists_title_text_view"
+        style="@style/CineMates.SecondaryPageTitleTextView"
+        android:text="@string/userprofile_other_lists"
+        app:layout_constraintBottom_toBottomOf="@+id/logged_user_other_lists_back_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/logged_user_other_lists_movie_lists_present_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="32dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logged_user_other_lists_title_text_view">
+
+
+        <RelativeLayout
+            android:id="@+id/logged_user_other_lists_search_layout"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/rounded10dp_rectangle_shape_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="LabelFor,RtlSymmetry">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/logged_user_other_lists_search_edit_text"
+                style="@style/CineMates.TextInputLayout.EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="0dp"
+                android:layout_toStartOf="@+id/logged_user_other_lists_clear_icon"
+                android:hint="@string/search_among_your_lists"
+                android:imeOptions="actionSearch"
+                android:inputType="textEmailAddress" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/logged_user_other_lists_clear_icon"
+                style="@style/CineMates.OnlyIconWithNoBorderButton"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="5dp"
+                android:layout_toStartOf="@+id/logged_user_other_lists_vertical_line"
+                android:visibility="invisible"
+                app:cornerRadius="8dp"
+                app:icon="@drawable/ic_baseline_close_24"
+                app:iconTint="@color/gray_text"
+                app:rippleColor="@color/gray_text"  />
+
+            <View
+                android:id="@+id/logged_user_other_lists_vertical_line"
+                android:layout_width="1dp"
+                android:layout_height="16dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="15dp"
+                android:layout_toStartOf="@+id/logged_user_other_lists_search_icon"
+                android:background="@color/gray_line"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/logged_user_other_lists_search_icon"
+                style="@style/CineMates.OnlyIconWithNoBorderButton"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="6dp"
+                app:cornerRadius="8dp"
+                app:icon="@drawable/ic_baseline_search_24"
+                app:iconTint="@color/white"
+                app:rippleColor="@color/white" />
+        </RelativeLayout>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/logged_user_other_lists_recyclerview_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/logged_user_other_lists_search_layout"
+            tools:layout_editor_absoluteX="369dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/logged_user_other_lists_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp" />
+
+            <ImageView
+                android:id="@+id/logged_user_other_lists_gradient_overlay"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@drawable/top_to_bottom_horizontal_gradient"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/logged_user_other_lists_recyclerview" />
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/logged_user_other_lists_add_list_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="26dp"
+                android:elevation="60dp"
+                app:icon="@drawable/ic_baseline_add_36"
+                app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
+                app:maxImageSize="32dp" />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/logged_user_other_lists_no_search_result_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/logged_user_other_lists_search_layout">
+
+            <ImageView
+                android:id="@+id/logged_user_other_lists_no_search_result_imageview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/gray_signup_profile_pic"
+                android:src="@drawable/ic_baseline_search_70"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/logged_user_other_lists_no_search_result_textview"
+                style="@style/no_elements_in_view_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:text="@string/no_search_results"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/logged_user_other_lists_no_search_result_imageview" />
+
+            <TextView
+                android:id="@+id/logged_user_other_lists_no_search_result_subtitle_textview"
+                style="@style/no_elements_in_view_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/no_search_results_subtitle"
+                app:layout_constraintEnd_toEndOf="@+id/logged_user_other_lists_no_search_result_textview"
+                app:layout_constraintStart_toStartOf="@+id/logged_user_other_lists_no_search_result_textview"
+                app:layout_constraintTop_toBottomOf="@+id/logged_user_other_lists_no_search_result_textview" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/logged_user_other_lists_no_movie_list_present_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/logged_user_other_lists_no_movie_list_present_image_view"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:src="@drawable/empty_box"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/logged_user_other_lists_no_movie_list_present_textview"
+                style="@style/no_elements_in_view_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="64dp"
+                android:layout_marginEnd="64dp"
+                android:text="@string/no_movie_list_present"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/logged_user_other_lists_no_movie_list_present_image_view" />
+
+            <TextView
+                android:id="@+id/logged_user_other_lists_press_button_to_create_list_textvìew"
+                style="@style/no_elements_in_view_subtitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="62dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="62dp"
+                android:text="@string/press_button_to_create_list"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/logged_user_other_lists_no_movie_list_present_textview" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/logged_user_other_lists_no_lists_add_list_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="26dp"
+            android:elevation="60dp"
+            app:icon="@drawable/ic_baseline_add_36"
+            app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
+            app:maxImageSize="32dp" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

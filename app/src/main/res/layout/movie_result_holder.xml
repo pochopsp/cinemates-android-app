@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/movie_holder_relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    android:layout_marginStart="0dp"
+    android:background="@drawable/rounded10dp_rectangle_shape_gray"
+    android:orientation="vertical">
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/add_to_list_button"
+        style="@style/CineMates.Button"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="@drawable/add_to_list_button_background"
+        app:backgroundTint="@color/yellow_add_to_list"
+        app:icon="@drawable/ic_baseline_add_36"
+        app:iconGravity="textStart"
+        app:iconPadding="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/movie_poster_imageview"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/no_poster_available"
+        android:foreground="@drawable/left_rounded_black_gradient"
+        android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@style/CineMates.LeftRoundedImageViewStyle"
+        app:strokeColor="@color/gray_signup_surface"
+        app:strokeWidth="1dp" />
+
+    <TextView
+        android:id="@+id/tmdb_rating_text_textview"
+        style="@style/CineMates.TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="7dp"
+        android:includeFontPadding="false"
+        android:text="@string/tmdb_rating_label"
+        android:textSize="10.5sp" />
+
+    <TextView
+        android:id="@+id/movie_title_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="-20dp"
+        android:layout_toStartOf="@+id/add_to_list_button"
+        android:layout_toEndOf="@+id/movie_poster_imageview"
+        android:ellipsize="end"
+        android:fontFamily="@font/raleway_bold"
+        android:includeFontPadding="false"
+        android:maxLines="2"
+        android:text="Movie title"
+        android:textAlignment="viewStart"
+        android:textSize="15sp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/movie_year_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_to_list_button"
+        android:layout_alignStart="@+id/movie_title_textview"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="0dp">
+
+        <TextView
+            android:id="@+id/movie_year_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/genres_text_textview"
+            android:layout_alignBottom="@+id/genres_text_textview"
+            android:fontFamily="@font/lato_regular"
+            android:text="1999"
+            android:textAlignment="viewStart"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/movie_result_vertical_line"
+            android:layout_width="1dp"
+            android:layout_height="10dp"
+            android:layout_alignTop="@+id/movie_year_textview"
+            android:layout_alignBottom="@+id/movie_year_textview"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@+id/movie_year_textview"
+            android:background="@color/gray_line"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/movie_year_textview"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/genres_text_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@+id/movie_result_vertical_line"
+            android:fontFamily="@font/raleway_regular"
+            android:includeFontPadding="false"
+            android:text="Action, comedy"
+            android:textAlignment="viewStart"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/movie_result_vertical_line"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/movie_description_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/movie_year_description"
+        android:layout_alignStart="@+id/movie_year_description"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="15dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/raleway_regular"
+        android:maxLines="2"
+        android:text="Peter Parker è il tipico adolescente sfigato, segretamente innamorato fin da sempre di Mary Jane..."
+        android:textAlignment="viewStart"
+        android:textSize="11sp" />
+
+    <TextView
+        android:id="@+id/tmdb_rating_rate_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/movie_poster_imageview"
+        android:layout_alignBottom="@+id/tmdb_rating_text_textview"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toEndOf="@+id/tmdb_rating_text_textview"
+        android:fontFamily="@font/lato_bold"
+        android:text="5"
+        android:textAlignment="center"
+        android:textSize="12sp" />
+
+
+</RelativeLayout>

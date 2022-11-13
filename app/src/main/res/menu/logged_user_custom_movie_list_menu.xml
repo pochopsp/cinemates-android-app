@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/logged_user_movielist_rename_menu_item"
+        android:title="@string/logged_user_movielist_rename" />
+    <item
+        android:id="@+id/logged_user_movielist_delete_movies_menu_item"
+        android:title="@string/logged_user_movielist_delete_movies" />
+    <item
+        android:id="@+id/logged_user_movielist_delete_list_menu_item"
+        android:title="@string/logged_user_movielist_delete_list" />
+</menu>

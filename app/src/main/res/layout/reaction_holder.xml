@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/reaction_holder_relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="11dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageView
+            android:id="@+id/reaction_profile_pic_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/notification_image_profile_shape" />
+
+        <ImageView
+            android:id="@+id/white_circle2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/notification_image_profile_shape" />
+
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/username_reaction_author_textview"
+        style="@style/CineMates.UsernameInHolderTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/frameLayout"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_toStartOf="@+id/reaction_imageview"
+        android:layout_toEndOf="@+id/frameLayout" />
+
+    <ImageView
+        android:id="@+id/reaction_imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/frameLayout"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="14dp"
+        android:layout_marginBottom="7dp" />
+
+</RelativeLayout>

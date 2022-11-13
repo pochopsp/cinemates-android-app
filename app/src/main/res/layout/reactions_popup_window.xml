@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="20dp"
+    android:backgroundTint="@color/dialog_surface">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="290dp"
+        android:layout_height="50dp">
+
+        <RelativeLayout
+            android:id="@+id/popup_window_reaction_0_background"
+            android:layout_width="51dp"
+            android:layout_height="match_parent"
+            android:background="@color/gray_bottom_icon"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/popup_window_reaction_0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="13dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/popup_window_reaction_1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_like" />
+
+        <RelativeLayout
+            android:id="@+id/popup_window_reaction_1_background"
+            android:layout_width="47dp"
+            android:layout_height="match_parent"
+            android:background="@color/gray_bottom_icon"
+            android:visibility="invisible"
+            app:layout_constraintStart_toEndOf="@+id/popup_window_reaction_0_background" />
+
+        <ImageView
+            android:id="@+id/popup_window_reaction_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="13dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/popup_window_reaction_2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_love" />
+
+        <RelativeLayout
+            android:id="@+id/popup_window_reaction_2_background"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:background="@color/gray_bottom_icon"
+            android:visibility="invisible"
+            app:layout_constraintStart_toEndOf="@+id/popup_window_reaction_1_background" />
+
+        <ImageView
+            android:id="@+id/popup_window_reaction_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="13dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/popup_window_reaction_3"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_laugh" />
+
+        <RelativeLayout
+            android:id="@+id/popup_window_reaction_3_background"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:background="@color/gray_bottom_icon"
+            android:visibility="invisible"
+            app:layout_constraintStart_toEndOf="@+id/popup_window_reaction_2_background" />
+
+        <ImageView
+            android:id="@+id/popup_window_reaction_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="13dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/popup_window_reaction_4"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_wow" />
+
+        <RelativeLayout
+            android:id="@+id/popup_window_reaction_4_background"
+            android:layout_width="47dp"
+            android:layout_height="match_parent"
+            android:background="@color/gray_bottom_icon"
+            android:visibility="invisible"
+            app:layout_constraintStart_toEndOf="@+id/popup_window_reaction_3_background" />
+
+        <ImageView
+            android:id="@+id/popup_window_reaction_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="13dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/popup_window_reaction_5"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_sad" />
+
+        <RelativeLayout
+            android:id="@+id/popup_window_reaction_5_background"
+            android:layout_width="49dp"
+            android:layout_height="match_parent"
+            android:background="@color/gray_bottom_icon"
+            android:visibility="invisible"
+            app:layout_constraintStart_toEndOf="@+id/popup_window_reaction_4_background" />
+
+        <ImageView
+            android:id="@+id/popup_window_reaction_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_angry" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="none"
+    tools:context=".ui.home.HomeFragment">
+
+    <!-- focusableInTouchMode="true" is to prevent activity from scrolling a bit the scrollview as soon as the app starts -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="fill_vertical"
+        android:focusableInTouchMode="true">
+
+
+        <Button
+            android:id="@+id/now_playing_more_text_button"
+            style="@style/CineMates.SettingsTextButton"
+            android:layout_width="86dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/raleway_regular"
+            android:text="@string/view_all"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/in_theatres_textview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/in_theatres_textview"
+            app:layout_constraintTop_toTopOf="@+id/in_theatres_textview" />
+
+        <Button
+            android:id="@+id/popular_more_text_button"
+            style="@style/CineMates.SettingsTextButton"
+            android:layout_width="86dp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/raleway_regular"
+            android:text="@string/view_all"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/popular_text_view"
+            app:layout_constraintEnd_toEndOf="@+id/now_playing_more_text_button"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/popular_text_view"
+            app:layout_constraintTop_toTopOf="@+id/popular_text_view" />
+
+        <Button
+            android:id="@+id/upcoming_more_text_button"
+            style="@style/CineMates.SettingsTextButton"
+            android:layout_width="86dp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/raleway_regular"
+            android:text="@string/view_all"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/upcoming_textview"
+            app:layout_constraintEnd_toEndOf="@+id/popular_more_text_button"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/upcoming_textview"
+            app:layout_constraintTop_toTopOf="@+id/upcoming_textview" />
+
+        <Button
+            android:id="@+id/top_rated_more_text_button"
+            style="@style/CineMates.SettingsTextButton"
+            android:layout_width="86dp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/raleway_regular"
+            android:text="@string/view_all"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/top_rated_textview"
+            app:layout_constraintEnd_toEndOf="@+id/upcoming_more_text_button"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/top_rated_textview"
+            app:layout_constraintTop_toTopOf="@+id/top_rated_textview" />
+
+        <TextView
+            android:id="@+id/in_theatres_textview"
+            style="@style/CineMates.CarouselRecyclerTitleTextView"
+            android:layout_marginTop="8dp"
+            android:text="@string/in_theaters"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/popular_text_view"
+            style="@style/CineMates.CarouselRecyclerTitleTextView"
+            android:text="@string/popular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/home_slider_image" />
+
+
+        <TextView
+            android:id="@+id/upcoming_textview"
+            style="@style/CineMates.CarouselRecyclerTitleTextView"
+            android:text="@string/upcoming"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/popular_recyclerview" />
+
+        <TextView
+            android:id="@+id/top_rated_textview"
+            style="@style/CineMates.CarouselRecyclerTitleTextView"
+            android:text="@string/top_rated"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/upcoming_recyclerview" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/top_rated_recyclerview"
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/upcoming_recyclerview"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/top_rated_textview"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/upcoming_recyclerview"
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/popular_recyclerview"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/upcoming_textview">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <com.smarteist.autoimageslider.SliderView
+            android:id="@+id/home_slider_image"
+            android:layout_width="0dp"
+            android:layout_height="190dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/in_theatres_textview"
+            app:layout_constraintTop_toBottomOf="@+id/in_theatres_textview"
+            app:sliderAnimationDuration="600"
+            app:sliderAutoCycleDirection="right"
+            app:sliderAutoCycleEnabled="true"
+            app:sliderIndicatorAnimationDuration="600"
+            app:sliderIndicatorSelectedColor="@color/yellow_button"
+            app:sliderIndicatorUnselectedColor="@color/white"
+            app:sliderStartAutoCycle="true">
+
+        </com.smarteist.autoimageslider.SliderView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/popular_recyclerview"
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/popular_text_view">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="it.unina.cinemates.ui.home.HomeFragment"
+        android:label="@string/bottom_bar_homepage"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="it.unina.cinemates.ui.search.SearchFragment"
+        android:label="@string/bottom_bar_search"
+        tools:layout="@layout/fragment_search" />
+
+    <fragment
+        android:id="@+id/navigation_discover_lists"
+        android:name="it.unina.cinemates.ui.discoverlists.DiscoverListsFragment"
+        android:label="@string/bottom_bar_discover_lists"
+        tools:layout="@layout/fragment_discover_lists" />
+    <fragment
+        android:id="@+id/navigation_suggest_movie"
+        android:name="it.unina.cinemates.ui.suggestmovie.SuggestMovieFragment"
+        android:label="fragment_suggest_movie"
+        tools:layout="@layout/fragment_suggest_movie" />
+    <fragment
+        android:id="@+id/navigation_notification"
+        android:name="it.unina.cinemates.ui.notification.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" />
+    <fragment
+        android:id="@+id/navigation_view_all_movies"
+        android:name="it.unina.cinemates.ui.home.ViewAllMoviesFragment"
+        android:label="fragment_view_all_movies"
+        tools:layout="@layout/fragment_view_all_movies" />
+    <fragment
+        android:id="@+id/navigation_logged_user_profile"
+        android:name="it.unina.cinemates.ui.user.profile.logged.ProfileFragment"
+        android:label="fragment_user_profile"
+        tools:layout="@layout/fragment_logged_user_profile" />
+    <fragment
+        android:id="@+id/navigation_movie_full"
+        android:name="it.unina.cinemates.ui.movie.MovieFragment"
+        android:label="fragment_movie_full"
+        tools:layout="@layout/fragment_movie_full" />
+    <fragment
+        android:id="@+id/navigation_report"
+        android:name="it.unina.cinemates.ui.notification.ReportFragment"
+        android:label="fragment_report"
+        tools:layout="@layout/fragment_report" />
+    <fragment
+        android:id="@+id/navigation_logged_user_other_lists"
+        android:name="it.unina.cinemates.ui.user.customMovielists.logged.CustomMovieListsFragment"
+        android:label="fragment_logged_user_other_lists"
+        tools:layout="@layout/fragment_logged_user_other_lists" />
+    <fragment
+        android:id="@+id/navigation_comment"
+        android:name="it.unina.cinemates.ui.user.movielist.common.comment.CommentFragment"
+        android:label="fragment_comment"
+        tools:layout="@layout/fragment_comment" />
+    <fragment
+        android:id="@+id/navigation_create_movie_list"
+        android:name="it.unina.cinemates.ui.user.customMovielists.logged.manipulation.CreateMovieListFragment"
+        android:label="fragment_create_movie_list"
+        tools:layout="@layout/fragment_create_movie_list" />
+    <fragment
+        android:id="@+id/navigation_add_to_custom_movie_list"
+        android:name="it.unina.cinemates.ui.user.customMovielists.logged.manipulation.AddMovieToCustomListFragment"
+        android:label="fragment_add_to_custom_movie_list"
+        tools:layout="@layout/fragment_add_to_custom_movie_list" />
+    <fragment
+        android:id="@+id/navigation_reaction"
+        android:name="it.unina.cinemates.ui.user.movielist.common.reaction.ReactionFragment"
+        android:label="fragment_reaction"
+        tools:layout="@layout/fragment_reaction" />
+    <dialog
+        android:id="@+id/navigation_add_movie_to_list_bottom_sheet"
+        android:name="it.unina.cinemates.ui.user.movie.AddMovieToListBottomSheet"
+        android:label="CinematesBottomSheet" />
+    <fragment
+        android:id="@+id/navigation_logged_user_profile_settings"
+        android:name="it.unina.cinemates.ui.user.profile.logged.settings.ProfileSettingsFragment"
+        android:label="fragment_logged_user_profile_settings"
+        tools:layout="@layout/fragment_logged_user_profile_settings" />
+    <fragment
+        android:id="@+id/navigation_rating"
+        android:name="it.unina.cinemates.ui.user.movielist.common.rating.RatingFragment"
+        android:label="fragment_rating"
+        tools:layout="@layout/fragment_rating" />
+    <fragment
+        android:id="@+id/navigation_logged_user_movie_list"
+        android:name="it.unina.cinemates.ui.user.movielist.logged.MovieListFragment"
+        android:label="fragment_logged_user_movie_list"
+        tools:layout="@layout/fragment_logged_user_movie_list" />
+    <fragment
+        android:id="@+id/navigation_follow"
+        android:name="it.unina.cinemates.ui.user.follow.FollowFragment"
+        android:label="fragment_follow"
+        tools:layout="@layout/fragment_follow" />
+    <fragment
+        android:id="@+id/navigation_logged_user_change_password"
+        android:name="it.unina.cinemates.ui.user.profile.logged.settings.ChangePasswordFragment"
+        android:label="fragment_logged_user_change_password"
+        tools:layout="@layout/fragment_logged_user_change_password" />
+    <fragment
+        android:id="@+id/navigation_logged_user_delete_account"
+        android:name="it.unina.cinemates.ui.user.profile.logged.settings.DeleteAccountFragment"
+        android:label="fragment_delete_account"
+        tools:layout="@layout/fragment_logged_user_delete_account" />
+    <fragment
+        android:id="@+id/navigation_other_user_profile"
+        android:name="it.unina.cinemates.ui.user.profile.other.ProfileFragment"
+        android:label="fragment_other_user_profile"
+        tools:layout="@layout/fragment_other_user_profile" />
+    <fragment
+        android:id="@+id/navigation_other_user_movie_list"
+        android:name="it.unina.cinemates.ui.user.movielist.other.MovieListFragment"
+        android:label="fragment_other_user_movie_list"
+        tools:layout="@layout/fragment_other_user_movie_list" />
+    <fragment
+        android:id="@+id/navigation_other_user_other_lists"
+        android:name="it.unina.cinemates.ui.user.customMovielists.other.CustomMovieListsFragment"
+        android:label="fragment_other_user_other_lists"
+        tools:layout="@layout/fragment_other_user_other_lists" />
+    <fragment
+        android:id="@+id/navigation_movies_from_actor"
+        android:name="it.unina.cinemates.ui.movie.MoviesFromActorFragment"
+        android:label="fragment_movies_from_actor"
+        tools:layout="@layout/fragment_movies_from_actor" />
+</navigation>

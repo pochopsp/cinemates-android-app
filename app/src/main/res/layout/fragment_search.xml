@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:animateLayoutChanges="true"
+    tools:context=".ui.search.SearchFragment">
+
+
+    <RelativeLayout
+        android:id="@+id/comment_text_input_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="52dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="LabelFor,RtlSymmetry">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded10dp_rectangle_shape_gray">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/search_edit_text"
+                style="@style/CineMates.TextInputLayout.EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:hint="@string/search_movies_hint"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:paddingStart="12dp"
+                android:paddingEnd="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/year_filter_textview"
+                app:layout_constraintStart_toEndOf="@+id/by_actor_textview"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/year_filter_textview"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/rounded_year_filter_background"
+                android:fontFamily="@font/lato_regular"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/by_actor_textview"
+                app:layout_constraintEnd_toStartOf="@+id/search_clear_button"
+                app:layout_constraintTop_toTopOf="@+id/by_actor_textview" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/search_clear_button"
+                style="@style/CineMates.OnlyIconWithNoBorderButton"
+                android:layout_height="40dp"
+                android:layout_width="28dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="4dp"
+                android:visibility="gone"
+                app:cornerRadius="8dp"
+                app:icon="@drawable/ic_baseline_close_24"
+                app:iconTint="@color/gray_text"
+                app:rippleColor="@color/gray_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/search_vertical_line"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <View
+                android:id="@+id/search_vertical_line"
+                android:layout_width="1dp"
+                android:layout_height="16dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="4dp"
+                android:background="@color/gray_line"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/send_icon_button"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/send_icon_button"
+                style="@style/CineMates.OnlyIconWithNoBorderButton"
+                android:layout_height="40dp"
+                android:layout_width="28dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="4dp"
+                app:cornerRadius="8dp"
+                app:icon="@drawable/ic_baseline_search_24"
+                app:iconTint="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/year_filter_textview"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/year_filter_textview"
+                app:rippleColor="@color/white" />
+
+            <TextView
+                android:id="@+id/by_actor_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/raleway_regular"
+                android:text="@string/search_by_actor_placeholder"
+                android:textColor="@color/gray_placeholder_text"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/search_edit_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/search_edit_text" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/search_filter_icon"
+        style="@style/CineMates.OnlyIconWithNoBorderButton"
+        android:layout_height="38dp"
+        android:layout_marginEnd="6dp"
+        app:icon="@drawable/ic_baseline_filter_list_24"
+        app:iconTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/comment_text_input_layout"
+        app:rippleColor="@color/white" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/filter_constraint_layout"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_year_filter_background"
+        android:backgroundTint="@color/all_filter_background"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/search_filter_icon"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/comment_text_input_layout"
+        app:layout_constraintTop_toBottomOf="@+id/comment_text_input_layout">
+
+        <TextView
+            android:id="@+id/filter_year_textview"
+            style="@style/CineMates.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/filter_year_text"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/search_by_actor_textview"
+            style="@style/CineMates.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/search_by_actor"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/filter_year_textview"
+            app:layout_constraintTop_toBottomOf="@+id/filter_year_textview" />
+
+        <Button
+            android:id="@+id/search_remove_all_filters"
+            style="@style/CineMates.SettingsTextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/raleway_bold"
+            android:text="@string/remove_all_filters"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/search_by_actor_textview"
+            app:layout_constraintVertical_bias="0.100000024" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/search_by_actor_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/search_by_actor_textview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/search_by_actor_textview"
+            app:layout_constraintTop_toTopOf="@+id/search_by_actor_textview" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="110dp"
+            android:layout_height="25dp"
+            app:layout_constraintBottom_toBottomOf="@+id/filter_year_textview"
+            app:layout_constraintEnd_toEndOf="@+id/search_by_actor_switch"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/filter_year_textview"
+            app:layout_constraintTop_toTopOf="@+id/filter_year_textview">
+
+            <TextView
+                android:id="@+id/year_filter_edit_text"
+                style="@style/CineMates.TextInputLayout.EditTextStyle"
+                android:layout_width="110dp"
+                android:layout_height="25dp"
+                android:fontFamily="@font/lato_regular"
+                android:maxLength="4"
+                android:paddingStart="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="LabelFor,RtlSymmetry" />
+
+            <ImageView
+                android:id="@+id/clear_year_imageview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="1dp"
+                android:src="@drawable/ic_baseline_close_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/year_filter_edit_text"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="0dp"
+
+        android:backgroundTint="@color/black"
+        app:tabIndicatorColor="@color/yellow_button"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:tabTextAppearance="@style/CineMates.TabText"
+        app:tabTextColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filter_constraint_layout" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tab_layout"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tab_layout"
+        app:layout_constraintVertical_bias="0.0">
+
+    </androidx.viewpager2.widget.ViewPager2>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    tools:context=".ui.user.customMovielists.logged.manipulation.AddMovieToCustomListFragment">
+
+    <ImageView
+        android:id="@+id/add_to_custom_movie_list_back_icon"
+        style="@style/CineMates.BackIcon"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/add_to_custom_movie_list_title_text_view"
+        style="@style/CineMates.SecondaryPageTitleTextView"
+        android:text="@string/add_to_custom_list_page_title"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/add_to_custom_movie_list_back_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/addtocustommovielist_lists_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="28dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_to_custom_movie_list_title_text_view">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/add_to_custom_movie_list_create_new_list_button"
+            style="@style/CineMates.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="72dp"
+            android:layout_marginEnd="72dp"
+            android:text="@string/create_new_list"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RelativeLayout
+            android:id="@+id/add_to_custom_movie_list_search_layout"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/rounded10dp_rectangle_shape_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_to_custom_movie_list_create_new_list_button"
+            tools:ignore="LabelFor,RtlSymmetry">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/add_to_custom_movie_list_search_edit_text"
+                style="@style/CineMates.TextInputLayout.EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="0dp"
+                android:layout_toStartOf="@+id/add_to_custom_movie_list_clear_icon"
+                android:hint="@string/search_among_your_lists"
+                android:imeOptions="actionSearch"
+                android:inputType="textEmailAddress" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/add_to_custom_movie_list_clear_icon"
+                style="@style/CineMates.OnlyIconWithNoBorderButton"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="5dp"
+                android:layout_toStartOf="@+id/add_to_custom_movie_list_vertical_line"
+                android:visibility="invisible"
+                app:cornerRadius="8dp"
+                app:icon="@drawable/ic_baseline_close_24"
+                app:iconTint="@color/gray_text"
+                app:rippleColor="@color/gray_text" />
+
+            <View
+                android:id="@+id/add_to_custom_movie_list_vertical_line"
+                android:layout_width="1dp"
+                android:layout_height="16dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="15dp"
+                android:layout_toStartOf="@+id/add_to_custom_movie_list_search_icon"
+                android:background="@color/gray_line"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/add_to_custom_movie_list_search_icon"
+                style="@style/CineMates.OnlyIconWithNoBorderButton"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="6dp"
+                app:cornerRadius="8dp"
+                app:icon="@drawable/ic_baseline_search_24"
+                app:iconTint="@color/white"
+                app:rippleColor="@color/white" />
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/add_to_custom_movie_list_recyclerview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/add_to_custom_movie_list_search_layout"
+            app:layout_constraintStart_toStartOf="@+id/add_to_custom_movie_list_search_layout"
+            app:layout_constraintTop_toBottomOf="@+id/add_to_custom_movie_list_search_layout" />
+
+        <ImageView
+            android:id="@+id/add_to_custom_movie_list_gradient_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@drawable/top_to_bottom_horizontal_gradient"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/add_to_custom_movie_list_recyclerview" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/add_to_custom_list_no_search_result_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/add_to_custom_movie_list_recyclerview">
+
+            <ImageView
+                android:id="@+id/add_to_custom_movie_list_no_search_result_imageview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/gray_signup_profile_pic"
+                android:src="@drawable/ic_baseline_search_70"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/add_to_custom_movie_list_no_search_result_textview"
+                style="@style/no_elements_in_view_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:text="@string/no_search_results"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/add_to_custom_movie_list_no_search_result_imageview" />
+
+            <TextView
+                android:id="@+id/add_to_custom_movie_list_no_search_result_subtitle_textview"
+                style="@style/no_elements_in_view_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/no_search_results_subtitle"
+                app:layout_constraintEnd_toEndOf="@+id/add_to_custom_movie_list_no_search_result_textview"
+                app:layout_constraintStart_toStartOf="@+id/add_to_custom_movie_list_no_search_result_textview"
+                app:layout_constraintTop_toBottomOf="@+id/add_to_custom_movie_list_no_search_result_textview" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

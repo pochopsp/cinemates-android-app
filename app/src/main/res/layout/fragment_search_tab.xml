@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout4"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.search.SearchTabFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/user_search_constraint_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/no_search_user_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.38">
+
+            <TextView
+                android:id="@+id/first_search_user_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/first_search_users_text"
+                style="@style/no_elements_in_view_title"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/users_icon_imageview"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/ic_baseline_people_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/first_search_user_textview" />
+
+            <TextView
+                android:id="@+id/first_search_user_text_textvìew"
+                style="@style/no_elements_in_view_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:text="@string/perform_search_text"
+                app:layout_constraintEnd_toEndOf="@+id/users_icon_imageview"
+                app:layout_constraintStart_toStartOf="@+id/users_icon_imageview"
+                app:layout_constraintTop_toBottomOf="@+id/users_icon_imageview" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/no_result_users_textview"
+            style="@style/no_elements_in_view_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_search_results"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/no_result_users_imageview" />
+
+        <TextView
+            android:id="@+id/no_result_users_subtitle_textview"
+            style="@style/no_elements_in_view_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/no_search_results_subtitle"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@+id/no_result_users_textview"
+            app:layout_constraintStart_toStartOf="@+id/no_result_users_textview"
+            app:layout_constraintTop_toBottomOf="@+id/no_result_users_textview" />
+
+        <ImageView
+            android:id="@+id/no_result_users_imageview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_search_70"
+            android:backgroundTint="@color/gray_signup_profile_pic"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.32999998" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search_user_results_recyclerview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <ImageView
+            android:id="@+id/search_user_gradient_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="@drawable/top_to_bottom_horizontal_gradient"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/search_user_results_recyclerview" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/movie_search_constraint_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/no_search_movie_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.38">
+
+            <TextView
+                android:id="@+id/welcome_textview"
+                style="@style/no_elements_in_view_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/welcome"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/movie_first_search_textview"
+                style="@style/no_elements_in_view_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/first_search_movies_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/welcome_textview" />
+
+            <ImageView
+                android:id="@+id/tmdb_logo_imageview"
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/ic_tmdb_logo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/movie_first_search_textview" />
+
+            <TextView
+                android:id="@+id/first_search_text_textvìew"
+                style="@style/no_elements_in_view_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="@string/perform_search_text"
+                app:layout_constraintEnd_toEndOf="@+id/tmdb_logo_imageview"
+                app:layout_constraintStart_toStartOf="@+id/tmdb_logo_imageview"
+                app:layout_constraintTop_toBottomOf="@+id/tmdb_logo_imageview" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/no_result_movies_textview"
+            style="@style/no_elements_in_view_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_search_results"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/no_result_movies_imageview" />
+
+        <TextView
+            android:id="@+id/no_result_movies_subtitle_textview"
+            style="@style/no_elements_in_view_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:visibility="invisible"
+            android:text="@string/no_search_results_subtitle"
+            app:layout_constraintEnd_toEndOf="@+id/no_result_movies_textview"
+            app:layout_constraintStart_toStartOf="@+id/no_result_movies_textview"
+            app:layout_constraintTop_toBottomOf="@+id/no_result_movies_textview" />
+
+        <ImageView
+            android:id="@+id/no_result_movies_imageview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_search_70"
+            android:visibility="invisible"
+            android:backgroundTint="@color/gray_signup_profile_pic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.32999998" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search_movie_results_recyclerview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/search_movie_gradient_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="@drawable/top_to_bottom_horizontal_gradient"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/search_movie_results_recyclerview" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
